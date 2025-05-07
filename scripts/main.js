@@ -1,4 +1,4 @@
-const myImage = document.querySelector("img");
+const myImage = document.querySelector(".qiqi-toggle");
 
 myImage.addEventListener("click", () => {
     const mySrc = myImage.getAttribute("src");

@@ -1,0 +1,151 @@
+/* || General setup */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  background-color: #a9a9a9;
+}
+
+body {
+  width: 70%;
+  min-width: 800px;
+  margin: 0 auto;
+}
+
+/* || typography */
+
+h1, h2, h3 {
+  font-family: 'Roboto', monospace;
+  color: #000000;
+}
+
+p, input, li {
+  font-family: 'Roboto Condensed', monospace;
+  color: #000000;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+p, li {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* || header layout */
+
+header {
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+body > * {
+  background-color: red;
+  padding: 1%;
+}
+
+main, header, nav, article, aside, footer, section, div {
+    background-color: rgba(0, 62, 83, 0.224);
+    padding: 1%;
+    margin: 5px;
+}
+
+h1 {
+  flex: 5;
+}
+
+header img {
+  display: block;
+  height: 60px;
+  padding-top: 20.15px;
+}
+
+nav {
+  /* height: 50px; */
+  flex: 100%;
+  /* display: flex; */
+}
+
+nav ul {
+  padding: 50;
+  list-style-type: circle;
+  flex: 2;
+}
+
+nav li {
+  text-align:left;
+}
+
+nav a, nav span {
+  display: inline-block;
+  font-size: 2rem;
+  height: 3rem;
+  line-height: 1.7;
+  /* text-transform: uppercase; */
+  text-decoration: none;
+  color: black;
+
+}
+
+/* || main layout */
+
+main {
+  display: flex;
+}
+
+article {
+  flex: 4;
+}
+
+aside {
+  flex: 1;
+  margin-left: 10px;
+  padding: 1%;
+}
+
+/* aside a {
+  display: block;
+  float: left;
+  width: 50%;
+} */
+
+/* aside img {
+  max-width: 100%;
+}
+
+footer {
+  margin-top: 10px;
+} */
+
+.mob-info {
+    display: flex;
+}
+.mob-card, .mob-summary {
+    flex: 1;
+}
+
+.mob-card {
+    text-align: center;
+    background-color: brown;
+}
+
+.m-icon {
+    width: 64px;
+    height: 64px;
+}
