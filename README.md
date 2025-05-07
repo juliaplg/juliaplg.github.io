@@ -1,1 +1,1 @@
-http://juliaplg.github.com
+http://juliaplg.github.io
