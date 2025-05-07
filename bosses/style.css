@@ -7,7 +7,7 @@ html, body {
 
 html {
   font-size: 10px;
-  background-color: #a9a9a9;
+  background-color: #161616;
 }
 
 body {
@@ -20,12 +20,12 @@ body {
 
 h1, h2, h3 {
   font-family: 'Roboto', monospace;
-  color: #000000;
+  color: #fcf3d5;
 }
 
 p, input, li {
   font-family: 'Roboto Condensed', monospace;
-  color: #000000;
+  color: #fcf3d5;
 }
 
 h1 {
@@ -61,9 +61,13 @@ body > * {
 }
 
 main, header, nav, article, aside, footer, section, div {
-    background-color: rgba(0, 62, 83, 0.224);
+    background-color: #323232aa;
     padding: 1%;
     margin: 5px;
+}
+
+article, aside {
+    background-color: #666b5e;
 }
 
 h1 {
@@ -99,7 +103,7 @@ nav a, nav span {
   line-height: 1.7;
   /* text-transform: uppercase; */
   text-decoration: none;
-  color: black;
+  color: #A98467;
 
 }
 
@@ -133,6 +137,10 @@ footer {
   margin-top: 10px;
 } */
 
+a {
+    color: #ADC178;
+}
+
 .mob-info {
     display: flex;
 }
@@ -142,7 +150,6 @@ footer {
 
 .mob-card {
     text-align: center;
-    background-color: brown;
 }
 
 .m-icon {
