@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Custo-Benefício de Pizza</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 20px; background-color: #f4f4f4; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-width: 500px; width: 100%; }
+        h2 { color: #e63946; text-align: center; }
+        .pizza-input { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        label { display: block; font-size: 0.9rem; margin-bottom: 5px; color: #333; }
+        input { width: 90%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { width: 100%; padding: 12px; background-color: #e63946; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; font-weight: bold; }
+        button:hover { background-color: #c1121f; }
+        #resultado { margin-top: 20px; padding: 15px; border-radius: 6px; display: none; text-align: center; line-height: 1.5; }
+        .melhor { background-color: #d8f3dc; color: #1b4332; border: 1px solid #b7e4c7; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>🍕 Qual Pizza Vale Mais?</h2>
+    
+    <div class="pizza-input">
+        <div>
+            <strong>Pizza 1</strong>
+            <!-- <label>Preço (R$)</label> -->
+            <input type="number" id="preco1" placeholder="Preço">
+            <!-- <label>Diâmetro (cm)</label> -->
+            <input type="number" id="d1" placeholder="Diâmetro">
+        </div>
+        <div>
+            <strong>Pizza 2</strong>
+            <!-- <label>Preço (R$)</label> -->
+            <input type="number" id="preco2" placeholder="Preço">
+            <!-- <label>Diâmetro (cm)</label> -->
+            <input type="number" id="d2" placeholder="Diâmetro">
+        </div>
+    </div>
+
+    <button onclick="calcular()">Comparar Custo-Benefício</button>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+    function calcular() {
+        const p1 = parseFloat(document.getElementById('preco1').value);
+        const d1 = parseFloat(document.getElementById('d1').value);
+        const p2 = parseFloat(document.getElementById('preco2').value);
+        const d2 = parseFloat(document.getElementById('d2').value);
+
+        if (!p1 || !d1 || !p2 || !d2) {
+            alert("Por favor, preencha todos os campos!");
+            return;
+        }
+
+        const indice1 = p1 / (d1 * d1);
+        const indice2 = p2 / (d2 * d2);
+        
+        const resDiv = document.getElementById('resultado');
+        resDiv.style.display = "block";
+        resDiv.className = "melhor";
+
+        if (indice1 === indice2) {
+            resDiv.innerHTML = "<strong>Empate!</strong> Ambas custam o mesmo por cm².";
+        } else {
+            const p1Melhor = indice1 < indice2;
+            const melhor = p1Melhor ? "Pizza 1" : "Pizza 2";
+            const piorIndice = p1Melhor ? indice2 : indice1;
+            const melhorIndice = p1Melhor ? indice1 : indice2;
+            
+            const vantagem = ((piorIndice / melhorIndice) - 1) * 100;
+
+            resDiv.innerHTML = `🏆 <strong>${melhor} é a vencedora!</strong><br>
+                                Ela entrega <strong>${vantagem.toFixed(1)}%</strong> a mais de pizza por cada real investido.`;
+        }
+    }
+</script>
+
+</body>
+</html>
